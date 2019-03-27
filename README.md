@@ -1,1 +1,2 @@
-# OdinProject-rock_paper_scissors
+# The Odin Project's "rock paper scissors"
+A simple rock paper scissors game to understand Javascript functions. From The Odin Project's [curriculum](https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors)
