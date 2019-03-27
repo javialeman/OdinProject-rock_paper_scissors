@@ -10,29 +10,55 @@
         return options[Math.floor(Math.random() * 3)];
     }
 
+    function insensitivize(word){
+        w1=word.substring(0,1)
+        w2=word.substring(1)
+        word=(w1.toUpperCase()+w2.toLowerCase())
+        return word
+    }
+
     function playRound(playerSelection, computerSelection){
-        p1=playerSelection.substring(0,1)
-        p2=playerSelection.substring(1)
-        playerSelection=(p1.toUpperCase()+p2.toLowerCase())
-        c1=computerSelection.substring(0,1)
-        c2=computerSelection.substring(1)
-        computerSelection=(c1.toUpperCase()+c2.toLowerCase())
+        playerSelection=insensitivize(playerSelection)
+        computerSelection=insensitivize(computerSelection)
         if (playerSelection==computerSelection){
             return "Tie! No one loses or wins."
         }
         else {
             let options=['Rock','Paper','Scissors']
-            position=options.indexOf(playerSelection)
-            if (options[(position+1)%3]==computerSelection){
-                return "Oh! You lost against the computer. " + computerSelection + " beats " + playerSelection
+            let position=options.indexOf(playerSelection)
+            if (options[(position+1)%3]===computerSelection){
+                return "Oh! You lost against the computer. " + computerSelection + " beats " + playerSelection + "."
             }
-            else return "Yes! You won against the computer. " + playerSelection + "beats " + computerSelection
+            else if (position in options){
+                return "Yes! You won against the computer. " + playerSelection + " beats " + computerSelection + "."
+            }
+            else return "You did not input a valid argument."
         }
     }
 
-    const playerSelection = 'rock'
-    const computerSelection = computerPlay()
-    console.log(playRound(playerSelection, computerSelection))
+    function game(){
+        let wins=0
+        let losts=0
+        let playerSelection=""
+        let computerSelection=""
+        let result=""
+        for (i=0; i<5; i++){
+            playerSelection=prompt("Input your selection:")
+            computerSelection=computerPlay();
+            result=playRound(playerSelection, computerSelection)
+            console.log(result)
+            if (result.includes("won")) wins++
+            else if (result.includes("lost")) losts++
+        }
+        console.log("Matches won by you: " + wins)
+        console.log("Matches won by the computer: " + losts)
+        if(wins===losts) console.log("You and the computer have the same result.")
+        else {
+            wins>losts? console.log("You won!"):console.log("You lost!")
+        }
+    }
+
+    game()
 
 
   </script>
