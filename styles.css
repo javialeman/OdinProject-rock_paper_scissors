@@ -13,51 +13,14 @@ html, body {
     justify-content: center;
 }
 
-.tally {
-    display: flex;
-    background: rgba(168, 168, 168, 0.685);
-
-}
-.round-picks {
-    display: flex;
-    min-height: 50px;
-    background: rgba(168, 168, 168, 0.685);
-}
-
-.player-name {
-    min-width: 20vw;
+.player {
     text-align: center;
-}
-.computer-name {
-    min-width: 20vw;
-    text-align: center;
-}
-.player-choice {
-    min-width: 20vw;
-    min-height: 15vh;
-    text-align: center;
-}
-.computer-choice {
-    min-width: 20vw;
-    min-height: 15vh;
-    text-align: center;
-}
-.points {
-    min-width: 20vw;
-    /* flex: 1; */
-    text-align: center;
-}
-
-
-.players {
-    background: rgba(168, 168, 168, 0.685);
     display: flex;
 }
 
-.result {
-    min-width: 40vw;
-    min-height: 100px;
-    background: rgba(168, 168, 168, 0.685);
+.computer {
+    text-align: center;
+    display: flex;
 }
 
 #result {
